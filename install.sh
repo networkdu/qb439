@@ -38,7 +38,7 @@ systemctl daemon-reload
 # 启动并启用 qBittorrent 服务
 systemctl start qbittorrent
 systemctl enable qbittorrent
-
+systemctl restart qbittorrent
 # 打印服务状态
 systemctl status qbittorrent --no-pager
 
