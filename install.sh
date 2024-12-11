@@ -13,9 +13,9 @@ wget -O x86_64-qbittorrent-nox "$DOWNLOAD_URL"
 chmod +x x86_64-qbittorrent-nox
 
 # 运行一次以生成默认配置
-./x86_64-qbittorrent-nox <<< "y" &
-sleep 2
-pkill -f x86_64-qbittorrent-nox || true
+./x86_64-qbittorrent-nox &   # 后台运行
+sleep 2                      # 等待 2 秒
+echo "y" | pkill -P $$ -f x86_64-qbittorrent-nox || true  # 输入 "y" 并杀死子进程
 
 # 创建 Systemd 服务文件
 cat << EOF > "$SERVICE_FILE"
