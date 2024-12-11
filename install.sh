@@ -33,13 +33,17 @@ WantedBy=multi-user.target
 EOF
 
 # 重新加载 Systemd 配置
+echo "重新加载 Systemd 配置"
+sleep 1
 systemctl daemon-reload
 
 # 启动并启用 qBittorrent 服务
-systemctl start qbittorrent
-systemctl enable qbittorrent
+echo "重新启动 qBittorrent 服务"
+sleep 2   
+
 systemctl restart qbittorrent
 # 打印服务状态
+sleep 1
 systemctl status qbittorrent --no-pager
 
 # 提示用户访问信息
