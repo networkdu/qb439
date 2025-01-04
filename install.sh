@@ -1,5 +1,6 @@
 #!/bin/bash
-
+apt update -y 
+apt install mediainfo -y
 set -e
 
 # 定义变量
